@@ -66,3 +66,39 @@ def convert_to_BDT(dollar):
 
 dolr = float (input("Enter the amount of Dollar: "))
 print("From $",dolr,"to =",convert_to_BDT(dolr),"BDT")
+
+
+# Recursion
+def show(n):
+    if(n==0):
+        return 
+    print(n)
+    show(n-1)
+show(5)
+
+
+def factorial(n):
+    if(n==1 or n==0):
+        return 1
+    return n*factorial(n-1)
+    
+
+print(factorial(5))
+
+# Sum of first n natural number 
+def add(n):
+    if(n==0):
+     return 0
+    return n+add(n-1)
+n = int (input("enter value: "))
+print("The add: ",add(n))
+
+# Printing the elements of list by recursive function
+def list_p(list,i):
+    if(i==len(list)):
+        return
+    print(list[i])
+    list_p(list,i+1)
+
+groc = ["veg","spinach","salt","tomato",450,720]
+list_p(groc,0)
