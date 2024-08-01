@@ -50,3 +50,45 @@ with open("D:\Python Folder\prototype.txt","r") as f:
 
 with open("D:\Python Folder\prototype.txt","w") as f:
     f.write("we use the with function")
+
+# removing a file from folder by importing built in library Operating System  (os)
+# import os
+# os.remove("D:\Python Folder\sample.txt")
+
+# Files related Question 
+with open("D:\Python Folder\practice.txt","w") as f:
+    f.write("Hi everyone\n")
+    f.write("We are learning File I/O\n")
+    f.write("Using Java\n")
+    f.write("I like Programming in Java\n")
+
+# Replacing any words in the practice file
+def rep(word1,word2):
+     with open("D:\Python Folder\practice.txt","r") as f:
+        value= f.read()
+        new_value = value.replace(word1,word2)
+        print(new_value)
+        return new_value
+
+word1 = input("Enter word: ")
+word2 = input("Enter word: ")
+new_value=rep(word1,word2) 
+
+
+
+with open("D:\Python Folder\practice.txt","w") as f:
+     f.write(new_value)
+
+
+#Searching an word in file through file an function
+def search(ser):
+ with open("D:\Python Folder\practice.txt","r") as f:
+    sen = f.read()
+    word = sen.find(ser)
+    if(word!=-1):
+         print("found")
+    else:
+         print("Not found")
+
+ser = input("Enter word: ")
+search(ser) 
