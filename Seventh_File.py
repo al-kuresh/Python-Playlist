@@ -92,3 +92,23 @@ def search(ser):
 
 ser = input("Enter word: ")
 search(ser) 
+
+# Searching the line number in a file
+def lin_serc(word):
+    with open("D:\Python Folder\practice.txt","r") as f:
+        count=0
+        sentence = True
+        found = False
+        while sentence:
+         sentence = f.readline()
+         count+=1
+         if(sentence.find(word)!=-1):
+            print(word,"is in Line number",count) 
+            found =True
+    return found
+        
+words = input("Enter word: ")
+checker=lin_serc(words)
+if(checker == False):
+    print(checker)
+    
