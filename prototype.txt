@@ -1,0 +1,3 @@
+I created this text file
+to check whether the the 
+python file reads or write 
