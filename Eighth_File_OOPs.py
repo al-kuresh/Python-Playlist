@@ -108,6 +108,6 @@ class Facebook:
      def reset_pass(self):
           print(self.__password)
 
-f1 = Facebook("Al_Kuresh","001003a2b")
+f1 = Facebook("Al_Kuresh","mastermind")
 print(f1.usr)
 f1.reset_pass()
