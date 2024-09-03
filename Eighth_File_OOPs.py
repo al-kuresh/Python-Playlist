@@ -1,5 +1,113 @@
+# Number 1
+#Creating Class
+
 class Cars:
      name = "Mercedes"
+     number = 456
 
+#Creating Object instances
 c1 = Cars()
-print("Car Name: ",c1.name)
+print("Car Name  : ",c1.name)
+print("Car Number: ",c1.number)
+
+# Number 2
+#creating constructor
+class Students:
+     # Default constructor
+     def __init__(self):
+          print("Default Const") # won't be printed beacause all the objects have paramters in there constructor
+
+     department  = "ECE"  # this attribute doesn't need to be in the constructor cause it is same for all the students of ECE dept .
+                          # that's why department is a class attribute (we can write Students.department instead of s1 or s2.department)   
+     # Parameterized Constructor
+     def __init__(self,name,id,cgpa):
+          self.name = name
+          self.id = id
+          self.cgpa = cgpa
+          # those attributes which are attached to self parameter is called instance attributes
+     def grettings(self):
+          print("Welcome Students")
+        
+
+# data stored in the Objects or variables are Attributes Like Kuresh,2221987,3.79, these three are attributes
+s1 = Students("Kuresh",2221987,3.79,)
+s1.grettings()  # method is called
+print(s1.name," ",s1.id," ",s1.cgpa," ",s1.department)
+
+s2 = Students("Faruque",2221988,3.65)
+print(s2.name," ",s2.id," ",s2.cgpa," ",s2.department,"\n")
+
+
+# Class using method 
+class Exam():
+     exam_name = "Math"
+     def __init__(self,name,marks):
+          self.name = name
+          self.marks = marks
+     def get_marks(self):
+          return self.marks
+     def Name(self):
+          print("Hello ",self.name)
+
+e1 = Exam("Hridoy",85)
+e1.Name()
+print(e1.get_marks())
+
+# First Question
+"""class Student:
+     def __init__(self,name,math_marks,phy_marks,chem_marks):
+          self.name = name
+          self.math = math_marks
+          self.phy = phy_marks
+          self.chem = chem_marks
+
+     @staticmethod      # Decorator = no need to put the self parameter
+     def varsity():     
+          print("North South University")
+     def average(self):
+      print("Average of 3 subjects: ","%.2f" % float(((self.math+self.phy+self.chem)/3)))  # "%.2f" %
+
+s1 = Student(input("Enter name: "),float(input("Enter Math marks: ")),float(input("Enter Physics marks: ")),float(input("Enter Chemistry marks: ")))
+print(s1.name)
+s1.varsity()
+s1.average() """
+print("\n")
+
+# 2nd Question
+class Bank:
+     def __init__(self,account_no,balance):
+          self.acc = account_no
+          self.bal = balance
+
+     def credit(self,x):
+          self.bal= self.bal + x
+          print("Current Balance after credit: ",self.bal)
+
+     def debit(self,x):
+          self.bal= self.bal - x
+          print("Current Balance after debit: ",self.bal)
+          
+     def balance(self):
+          print("Current Balance: ",self.bal)
+     
+b1 = Bank(1510601997,22000)
+b1.balance()
+b1.credit(5000)
+b1.balance() 
+b1.debit(7000) 
+
+b2 = Bank(1510602000,8000)
+b2.credit(4000)
+b2.debit(2000)
+print("\n")
+# Public And Private
+class Facebook:
+     def __init__(self,username,password):
+          self.usr = username
+          self.__password = password # self.__password here the under score has made the attribute private. that's why it can't be accessed
+     def reset_pass(self):
+          print(self.__password)
+
+f1 = Facebook("Al_Kuresh","001003a2b")
+print(f1.usr)
+f1.reset_pass()
