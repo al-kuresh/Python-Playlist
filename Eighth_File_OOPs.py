@@ -100,6 +100,7 @@ b2 = Bank(1510602000,8000)
 b2.credit(4000)
 b2.debit(2000)
 print("\n")
+
 # Public And Private
 class Facebook:
      def __init__(self,username,password):
@@ -111,3 +112,19 @@ class Facebook:
 f1 = Facebook("Al_Kuresh","mastermind")
 print(f1.usr)
 f1.reset_pass()
+
+class person:
+     __name = "Kureshreushs"
+
+# this is how we print the private attributes by calling the private method inside a public method 
+     def Name(self):
+          self.__say_hi()
+          print(self.__name)
+
+     def __say_hi(self):
+          print("hi")
+
+p1 = person()
+# print(p1.__name) invalid cause private attribute __name
+# p1.__say_hi()     invalid cause private method __say_hi()
+p1.Name()
