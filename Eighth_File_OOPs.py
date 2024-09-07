@@ -157,39 +157,6 @@ c1.color()
 print("\n")
 
 # MUlti_level Inheritence
-# Base class
-
-class Animal:
-    def __init__(self, name):
-        self.name = name
-    
-    def speak(self):
-        print(self.name,"makes a sound.")
-
-# Intermediate class inheriting from Animal
-class Mammal(Animal):
-    def __init__(self, name):
-        super().__init__(name)
-    
-    def walk(self):
-        print(self.name,"is walking.")
-
-# Derived class inheriting from Mammal (multi-level inheritance)
-class Dog(Mammal):
-    def __init__(self, name):
-        super().__init__(name)
-    
-    def bark(self):
-        print(self.name," is barking.")
-
-# Creating an object of the Dog class
-dog = Dog("Buddy")
-
-# Calling methods from all levels of inheritance
-dog.speak()  # From Animal class
-dog.walk()   # From Mammal class
-dog.bark()   # From Dog class
-
 print("\n")
 
 class Cars:
@@ -201,6 +168,7 @@ class Cars:
      def registration(self):
           print("Registration is",self.reg)  
 
+# Intermediate class inheriting from Cars
 class Brand(Cars):
      def __init__(self,brand_name,num_plate,reg):  
           super().__init__(num_plate,reg)
@@ -208,6 +176,7 @@ class Brand(Cars):
      def brandName(self):
           print( "Car brand is",self.brand)
 
+# Derived class inheriting from Brand(Cars) (multi-level inheritance)
 class Type(Brand):
      def __init__(self,brand_name,num_plate,reg,type):
           super().__init__(brand_name,num_plate,reg)
@@ -215,10 +184,28 @@ class Type(Brand):
      def car_Type(self):
           print( "Car Type is",self.type)
 
+# Creating an object of the Type class
 c3 = Type("Audi","B45-012",14986,"Hybrid")
+
+# Calling methods from all levels of inheritance
 c3.brandName()
 c3.number_plate()
 c3.registration()
 c3.car_Type()
+print("\n")
 
-          
+# Multiple Inheritence 
+
+class Person_A :
+     rel_A = "Al Kuresh"
+class Person_B:
+     rel_B = "Bobby" 
+
+class Person_C(Person_A ,Person_B):
+     def relation(self):
+          print("Kuresh And Bobby are Brothers")  
+
+Pc = Person_C()
+print(Pc.rel_A) 
+print(Pc.rel_B)
+Pc.relation()
