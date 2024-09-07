@@ -128,3 +128,97 @@ p1 = person()
 # print(p1.__name) invalid cause private attribute __name
 # p1.__say_hi()     invalid cause private method __say_hi()
 p1.Name()
+
+# Inheritence
+# Single Inheritence
+
+class Car:          # Here class car is the parent class and it's methods are needed to static to access them
+     @staticmethod            
+     def color():
+          print("black")
+     @staticmethod
+     def accelerate():
+          print("Car is accelerated")
+     
+
+class Lexus_Car(Car):          # Here Lexus_Car() is the child class which is inheriting the methods and attributes of Car class by Lexus_Car(Car)
+     def __init__(self,name):
+          self.name = name
+
+     def printing(self):
+          print("Car name is ",self.name)
+
+c1 = Lexus_Car("LC 500")
+c2 = Lexus_Car("Land Cruiser")
+
+c1.printing()
+c1.accelerate()
+c1.color()
+print("\n")
+
+# MUlti_level Inheritence
+# Base class
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        print(self.name,"makes a sound.")
+
+# Intermediate class inheriting from Animal
+class Mammal(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+    
+    def walk(self):
+        print(self.name,"is walking.")
+
+# Derived class inheriting from Mammal (multi-level inheritance)
+class Dog(Mammal):
+    def __init__(self, name):
+        super().__init__(name)
+    
+    def bark(self):
+        print(self.name," is barking.")
+
+# Creating an object of the Dog class
+dog = Dog("Buddy")
+
+# Calling methods from all levels of inheritance
+dog.speak()  # From Animal class
+dog.walk()   # From Mammal class
+dog.bark()   # From Dog class
+
+print("\n")
+
+class Cars:
+     def __init__(self,num_plate,reg):
+          self.np = num_plate
+          self.reg = reg
+     def number_plate(self):
+           print( "Number plate is",self.np)  
+     def registration(self):
+          print("Registration is",self.reg)  
+
+class Brand(Cars):
+     def __init__(self,brand_name,num_plate,reg):  
+          super().__init__(num_plate,reg)
+          self.brand = brand_name
+     def brandName(self):
+          print( "Car brand is",self.brand)
+
+class Type(Brand):
+     def __init__(self,brand_name,num_plate,reg,type):
+          super().__init__(brand_name,num_plate,reg)
+          self.type = type
+     def car_Type(self):
+          print( "Car Type is",self.type)
+
+c3 = Type("Audi","B45-012",14986,"Hybrid")
+c3.brandName()
+c3.number_plate()
+c3.registration()
+c3.car_Type()
+
+          
