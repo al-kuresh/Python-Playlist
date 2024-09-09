@@ -232,3 +232,32 @@ c1 = complex(4,5)
 c2 = complex(3,10)
 c3 = c1+c2
 c3.showNUm()
+
+# Creating circle class with radius r and methods area()  and perimeter()
+
+class circle:
+     def __init__(self,radius):
+          self.r =radius
+      
+     def area(self):
+          return 3.1416*(self.r)**2 
+     def parameter(self):
+          return 2*3.1416*self.r
+
+cir = circle(5)
+print(round(cir.area(),2)," ",round(cir.parameter(),2))
+
+
+class Employee:
+     def __init__(self,role,dept,salary):
+          self.r = role
+          self.d = dept
+          self.s = salary
+     
+     def showDetails(self):
+          print("Role :",self.r)
+          print("Department :",self.d)
+          print("Salary :",self.s)
+
+emp1 = Employee("Engineer","Networks and security",500000)
+emp1.showDetails()
