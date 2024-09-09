@@ -276,3 +276,4 @@ class Engineer(Employee):
 
 emp2 = Engineer("Al-Kuresh",25,"Engineer","Networks and security",500000)
 emp2.showDetails()
+print("\n")
