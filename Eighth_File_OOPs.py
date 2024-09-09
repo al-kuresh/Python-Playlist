@@ -209,3 +209,26 @@ Pc = Person_C()
 print(Pc.rel_A) 
 print(Pc.rel_B)
 Pc.relation()
+
+print([1,2,3]+[4,5,6])
+
+# dunder function (double underscore) __
+
+class complex:
+     def __init__(self,real,img):
+          self.r = real
+          self.i = img
+
+     def showNUm(self):
+          print(self.r,"+",self.i,"i")
+
+     def __add__(self,other):     # Operator overloading
+          newR = self.r + other.r
+          newI = self.i + other.i
+          return complex(newR,newI)
+
+
+c1 = complex(4,5)
+c2 = complex(3,10)
+c3 = c1+c2
+c3.showNUm()
