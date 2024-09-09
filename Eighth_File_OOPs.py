@@ -257,7 +257,22 @@ class Employee:
      def showDetails(self):
           print("Role :",self.r)
           print("Department :",self.d)
-          print("Salary :",self.s)
+          print("Salary :",self.s,"\n")
 
 emp1 = Employee("Engineer","Networks and security",500000)
 emp1.showDetails()
+
+
+class Engineer(Employee):
+     def __init__(self,name,age, role, dept, salary):
+          super().__init__(role, dept, salary)
+          self.name = name
+          self.age = age
+     
+     def showDetails(self):
+          print("Name :",self.name)
+          print("Age: ",self.age)
+          super().showDetails()
+
+emp2 = Engineer("Al-Kuresh",25,"Engineer","Networks and security",500000)
+emp2.showDetails()
